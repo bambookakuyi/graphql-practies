@@ -28,7 +28,9 @@ rails db:seed
 
 If you need to add test data
 
-`rails db:seed_fu`
+```
+rails db:seed_fu
+```
 
 ### Run server
 ```
