@@ -7,13 +7,13 @@ module Types
 
     # TODO: remove me
     field :test_field, String, null: false,
-                               description: 'An example field added by the generator'
+                               description: "An example field added by the generator"
     def test_field
-      'Hello World!'
+      "Hello World!"
     end
 
     field :post, PostType, null: true do
-      description '通过id查询post'
+      description "通过id查询post"
       argument :id, ID, required: true
     end
 
@@ -22,7 +22,7 @@ module Types
     end
 
     field :posts, [PostType], null: true do
-      description '查询所有post'
+      description "查询所有post"
       argument :ids, [ID], required: false
     end
 
@@ -31,7 +31,7 @@ module Types
     end
 
     field :comment, CommentType, null: true do
-      description '通过id查询comment'
+      description "通过id查询comment"
       argument :id, ID, required: true
     end
 
