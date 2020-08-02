@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Types
-  class BaseObject < GraphQL::Schema::Object
+module Types::Base
+  class Object < GraphQL::Schema::Object
     field :id, ID, null: false
     field :created_at, String, null: false
 

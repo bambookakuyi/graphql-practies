@@ -6,9 +6,9 @@ module Mutations
     argument :rating, Int, required: false
 
     # mutation的返回类型
-    # type Types::PostType
+    # type Types::Models::PostType
 
-    field :post, Types::PostType, null: true
+    field :post, Types::Models::PostType, null: true
     field :errors, [String], null: false
 
     def resolve(title: nil, rating: nil)
@@ -29,10 +29,10 @@ module Mutations
   end
 
   class ChangePostRating < BaseMutation
-    argument :post_id, ID, required: true, loads: Types::PostType
+    argument :post_id, ID, required: true, loads: Types::Models::PostType
     argument :rating, Integer, required: false
 
-    field :post, Types::PostType, null: true
+    field :post, Types::Models::PostType, null: true
 
     def resolve(post:, rating:)
       if post.update(rating: rating)
