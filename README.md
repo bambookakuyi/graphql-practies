@@ -1,7 +1,7 @@
 ## environment
 
 1. ruby 2.5.1
-2. rails 5.2.2
+2. rails 5.2.4
 
 ## Start server
 

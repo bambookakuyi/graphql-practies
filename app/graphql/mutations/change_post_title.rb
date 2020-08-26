@@ -2,10 +2,10 @@
 
 module Mutations
   class ChangePostTitle < BaseMutation
-    argument :post_id, ID, required: true, loads: Types::PostType
+    argument :post_id, ID, required: true, loads: Types::Models::PostType
     argument :title, String, required: false
 
-    field :post, Types::PostType, null: true
+    field :post, Types::Models::PostType, null: true
 
     def resolve(post:, title:)
       if post.update(title: title)

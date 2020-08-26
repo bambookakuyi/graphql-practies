@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Types
-  class QueryType < BaseObject
+  class QueryType < GraphQL::Schema::Object
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
@@ -12,7 +12,7 @@ module Types
       "Hello World!"
     end
 
-    field :post, PostType, null: true do
+    field :post, Models::PostType, null: true do
       description "通过id查询post"
       argument :id, ID, required: true
     end
@@ -21,7 +21,7 @@ module Types
       Post.find(id)
     end
 
-    field :posts, [PostType], null: true do
+    field :posts, [Models::PostType], null: true do
       description "查询所有post"
       argument :ids, [ID], required: false
     end
@@ -30,7 +30,7 @@ module Types
       Post.ransack(id_in: ids).result
     end
 
-    field :comment, CommentType, null: true do
+    field :comment, Models::CommentType, null: true do
       description "通过id查询comment"
       argument :id, ID, required: true
     end
