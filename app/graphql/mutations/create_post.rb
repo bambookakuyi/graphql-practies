@@ -40,7 +40,7 @@ module Mutations
           post: post
         }
       else
-        raise GraphQL::ExecutionError, post.errors.full_messages.join('，')
+        raise GraphQL::ExecutionError, post.errors.full_messages.join("，")
       end
     end
   end
